@@ -22,9 +22,13 @@ bot.on("message", (option) => {
   console.log("Message Received", option);
 
   const chatId = option.chat.id;
+  const text = option.text;
 
-  bot.sendMessage(
-    chatId,
-    "Hello, I'm a Joke Bot. Please type /joke to get a joke."
-  );
+  if (text !== "/joke") {
+    console.log("Message Received", option);
+    bot.sendMessage(
+      chatId,
+      "Hello, I'm a Joke Bot. Please type /joke to get a joke."
+    );
+  }
 });
